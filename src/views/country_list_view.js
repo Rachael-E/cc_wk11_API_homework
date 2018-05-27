@@ -13,7 +13,7 @@ CountryListView.prototype.bindEvents = function () {
 
 CountryListView.prototype.renderCountryNamesViews = function (countries) {
   //console.log(countries.length);
-  
+
   countries.forEach( (oneCountry, index) => {
     //create one country list item
     const countryListItem = this.makeNewCountryListItem(oneCountry.name, index );
@@ -31,6 +31,8 @@ CountryListView.prototype.makeNewCountryListItem = function (countryName, countr
     //evt.target is countryDetailView
     console.log(evt.target.id);
     PubSub.publish('CountryListView:country-clicked', evt.target.id);
+    window.scrollTo(0,0); // added feature to return viewer to top of page
+
   });
   return countryDetailView;
 };
