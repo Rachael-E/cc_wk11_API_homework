@@ -12,7 +12,8 @@ CountryListView.prototype.bindEvents = function () {
 };
 
 CountryListView.prototype.renderCountryNamesViews = function (countries) {
-  console.log(countries.length);
+  //console.log(countries.length);
+  
   countries.forEach( (oneCountry, index) => {
     //create one country list item
     const countryListItem = this.makeNewCountryListItem(oneCountry.name, index );
@@ -26,7 +27,7 @@ CountryListView.prototype.makeNewCountryListItem = function (countryName, countr
   countryDetailView.textContent = countryName; //France
   countryDetailView.id = countryId; //23
 
-  countryDetailView.addEventListener('click', (evt) => {
+  countryDetailView.addEventListener('click', (evt) => { //can use mouseover when hovering
     //evt.target is countryDetailView
     console.log(evt.target.id);
     PubSub.publish('CountryListView:country-clicked', evt.target.id);

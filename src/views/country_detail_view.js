@@ -16,7 +16,7 @@ CountryDetailView.prototype.bindEvents = function () {
 CountryDetailView.prototype.renderCountryDetail = function (country) {
   this.htmlContainer.innerHTML = '';
 
-  const countryCapital = document.createElement('li');
+  const countryCapital = document.createElement('div');
   countryCapital.textContent = `The capital of ${country.name} is ${country.capital}, and it has a population of ${country.population}`;
   this.htmlContainer.appendChild(countryCapital);
 };

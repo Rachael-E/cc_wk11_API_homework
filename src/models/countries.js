@@ -3,8 +3,6 @@ const PubSub = require('../helpers/pub_sub.js');
 
 const Countries = function () {
   this.countriesData = [];
-  // this.region = [];
-  // this.capital = [];
 }
 
 Countries.prototype.getData = function () {
